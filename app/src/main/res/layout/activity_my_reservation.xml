@@ -44,4 +44,12 @@
         app:layout_constraintBottom_toBottomOf="@+id/rcReservation"
         app:layout_constraintEnd_toEndOf="@+id/rcReservation"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <TextView
+        android:id="@+id/tTotalNoOfPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/rcReservation"
+        app:layout_constraintTop_toTopOf="@+id/textView11" />
 </androidx.constraintlayout.widget.ConstraintLayout>

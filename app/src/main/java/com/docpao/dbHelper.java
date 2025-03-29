@@ -108,5 +108,20 @@ public class dbHelper extends SQLiteOpenHelper {
         }
     }
 
+    public int sumOfColumnNoOfPerson(){
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT SUM(RES_NUMBER_OF_PERSON) FROM Res_Table";
+        Cursor cursor = db.rawQuery(query,null);
+        int sum = 0;
+
+        if (cursor.moveToFirst()){
+            sum = cursor.getInt(0);
+        }
+        cursor.close();
+
+        return sum;
+    }
+
 
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -22,6 +23,7 @@ public class myReservation extends AppCompatActivity {
 
     RecyclerView rcReservation;
     FloatingActionButton bCustomerHomePage;
+    TextView tTotalNoOfPerson;
 
     resAdapter adapter;
     ArrayList<String> ID = new ArrayList<>();
@@ -39,7 +41,7 @@ public class myReservation extends AppCompatActivity {
 
         rcReservation = findViewById(R.id.rcReservation);
         bCustomerHomePage  = findViewById(R.id.bCustomerHomePage);
-
+        tTotalNoOfPerson = findViewById(R.id.tTotalNoOfPerson);
 
         storeInArray();
         adapter = new resAdapter(this,
@@ -54,8 +56,10 @@ public class myReservation extends AppCompatActivity {
         rcReservation.setLayoutManager(new LinearLayoutManager(this));
         rcReservation.setAdapter(adapter);
 
+        dbHelper dbHelper = new dbHelper(this);
+        int mema = dbHelper.sumOfColumnNoOfPerson();
 
-
+        tTotalNoOfPerson.setText(String.valueOf(mema));
 
 
 
@@ -86,7 +90,6 @@ public class myReservation extends AppCompatActivity {
 
             }
         }
-
 
     }
 
