@@ -10,18 +10,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class Frag_FarmerProfile extends Fragment {
+public class Frag_CustomerProfile extends Fragment {
 
     Button logout;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_frag__farmer_profile, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_frag__customer_profile, container, false);
         logout = view.findViewById(R.id.btn_SignOut);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,7 +32,6 @@ public class Frag_FarmerProfile extends Fragment {
                 startActivity(intent);
             }
         });
-
         return view;
     }
 }
