@@ -61,6 +61,8 @@ public class myReservation extends AppCompatActivity {
 
         tTotalNoOfPerson.setText(String.valueOf(mema));
 
+        tTotalNoOfPerson.setVisibility(View.INVISIBLE);
+
 
 
 

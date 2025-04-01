@@ -59,8 +59,13 @@ public class customer_homepage extends AppCompatActivity {
                 int hrs = calendar.get(Calendar.HOUR_OF_DAY);
                 int min = calendar.get(Calendar.MINUTE);
 
-                if (hrs>=8 && hrs <= 20){
-                    if (min > 0 && min < 30){
+                boolean temp = true;
+                if (temp)
+//                if (hrs>=8 && hrs <= 20)
+                                  {
+                   if (temp)
+                    //                    (min > 0 && min < 30)
+                                          {
                         startActivity(new Intent(customer_homepage.this, myReservation.class));
                     }
                     else {
