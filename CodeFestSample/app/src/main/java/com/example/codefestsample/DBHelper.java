@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME);
+        db.execSQL("CREATE TABLE " + TABLE_NAME + "(" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_NAME + " TEXT, "+ COL_DESC + " TEXT, "+ COL_PRICE + " TEXT, " + COL_QUANTITY + " TEXT)");
     }
 
     @Override
@@ -37,7 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addItem(String name, String Desc, String Price, String Quantity){
+    public void addItem(String name, String Desc, String Price, String Quantity){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL_NAME, name);
@@ -67,14 +67,16 @@ public class DBHelper extends SQLiteOpenHelper {
             Toast.makeText(context, "Data Added", Toast.LENGTH_SHORT).show();
         }
     }
-    void viewItems(){
+    Cursor viewItems(){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = null;
-        cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-        if(cursor == null){
+
+        if(db != null){
+            cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        }else{
             Toast.makeText(context, "Found nothing", Toast.LENGTH_SHORT).show();
         }
-
+        return cursor;
     }
     void deleteItem(String id){
         SQLiteDatabase db = this.getWritableDatabase();
