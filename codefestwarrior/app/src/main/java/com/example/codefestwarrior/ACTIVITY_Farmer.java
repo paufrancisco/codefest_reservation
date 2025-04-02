@@ -21,8 +21,16 @@ public class ACTIVITY_Farmer extends AppCompatActivity {
 
         binding = ActivityFarmerBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setFragment(new FragmentFarmerList());
 
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
+            if(item.getItemId() == R.id.btn_home){
+                setFragment(new FragmentFarmerHome());
+            }else if(item.getItemId() == R.id.btn_list){
+                setFragment(new FragmentFarmerList());
+            }else if(item.getItemId() == R.id.btn_profile){
+                setFragment(new FragmentFarmerProfile());
+            }
             return true;
         });
 
