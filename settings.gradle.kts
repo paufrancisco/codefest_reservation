@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "practice1_restaurant_reservation"
+rootProject.name = "CodeFestSample"
 include(":app")
  

@@ -2,10 +2,4 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="beige">#F2EFE7</color>
-    <color name="light_blue">#9ACBD0</color>
-    <color name="teal">#48A6A7</color>
-    <color name="dark_teal">#006A71</color>
-    <color name="accent">#006A71</color> <!-- Example pink accent color -->
-
 </resources>
