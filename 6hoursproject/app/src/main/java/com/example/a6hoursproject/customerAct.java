@@ -7,6 +7,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.example.a6hoursproject.cusFragments.cHomeFrag;
+import com.example.a6hoursproject.cusFragments.cListFrag;
+import com.example.a6hoursproject.cusFragments.cProfFrag;
 import com.example.a6hoursproject.databinding.ActivityCustomerBinding;
 
 public class customerAct extends AppCompatActivity {
